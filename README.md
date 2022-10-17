@@ -39,3 +39,9 @@ _Step 4_: Use any API client to test this backend APIs, or integrate it with you
 | 6    | `published`     | `Boolean`  | ✅       |
 | 7    | `body_markdown` | `String`   | ✅       |
 | 8    | `api_key`       | `String`   | ✅       |
+
+
+### IMPORTANT NOTE ❗❗
+
+The forem API used in this application, to schedule and upload the Dev.to articles, is deprecated and will be removed in the future release.
+Check [Forem API](https://developers.forem.com/api) to learn more.
