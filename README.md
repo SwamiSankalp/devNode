@@ -16,7 +16,7 @@ _Step 2_: Using the following command, install all the required dependencies:
 $ npm install
 ```
 
-_Step 3_: Run `npm run dev` to spin up the server.
+_Step 3_: Run `npm run dev` to spin up the server using *nodemon*.
 
 _Step 4_: Use any API client to test this backend APIs, or integrate it with your frontend. The table below contains a list of API endpoints.
 
