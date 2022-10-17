@@ -7,11 +7,14 @@
 // DEPENDENCIES
 import axios from "axios";
 
-// @params - Request & Response Object
-// @returns - Response to the API Request
+// * @params - bodyData object
+// * [title: String, published: Boolean, body_markdown: String, api_key: String]
+//
+// * @returns - Response from the API Request
 export const add = async (bodyData) => {
-  console.log(bodyData);
   const baseURL = "https://dev.to/api/articles";
+  // * Set the headers for your POST API request
+  // * Add your Dev.to api key in the headers object
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -27,8 +30,8 @@ export const add = async (bodyData) => {
   };
   try {
     const response = await axios.post(baseURL, data, config);
-    return response.json;
+    return response;
   } catch (err) {
-    res.json(err);
+    return err;
   }
 };

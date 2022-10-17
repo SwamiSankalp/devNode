@@ -21,8 +21,10 @@ app.get("/", async (req, res) => {
   try {
     const response = await axios.get("https://dev.to/api/articles");
     res.json(response.data);
-  } catch {
-    return "No data found";
+  } catch (err) {
+    if (error.response) {
+      res.status(err.response.status).json(err);
+    }
   }
 });
 
@@ -54,10 +56,10 @@ app.post("/schedule", async (req, res) => {
   try {
     await scheduler(time, data);
     res.status(201).json({
-      result: `Your articles is scheduled on ${time.date}, ${time.month} at ${time.hours}:${time.minutes}`,
+      result: `Your article is scheduled on ${time.date}, ${time.month} at ${time.hours}:${time.minutes}`,
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(err.response.status).json(err);
   }
 });
 
